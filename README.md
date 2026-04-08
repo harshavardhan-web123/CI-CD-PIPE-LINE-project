@@ -123,13 +123,3 @@ ci-cd-pipeline-demo/
 **Harshavardhan**  
 BCA Student | Aspiring Cloud & DevOps Engineer  
 
----
-
-## ⭐ Conclusion
-This project successfully demonstrates how modern DevOps practices can automate software development and deployment processes using CI/CD pipelines.
-
-
-
-  
-
-## ⚙️ CI/CD Pipeline Flow
