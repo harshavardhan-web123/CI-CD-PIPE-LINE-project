@@ -1,0 +1,97 @@
+🔷 CI/CD Pipeline Architecture Explanation
+
+This project demonstrates a fully automated Continuous Integration and Continuous Deployment (CI/CD) pipeline. The pipeline ensures that whenever a developer pushes code, it is automatically built, tested, and deployed without manual intervention.
+
+🔹 1. Developer (Code Creation)
+
+The process starts with the developer writing code for a Java web application on their local machine.
+
+The developer uses Git to manage source code.
+Changes are committed and pushed to the remote repository.
+🔹 2. GitHub Repository
+
+GitHub acts as the central version control system.
+
+Stores the application source code.
+Maintains version history.
+Allows collaboration among developers.
+
+Whenever code is pushed to the main branch, it triggers the next stage automatically.
+
+🔹 3. Webhook Trigger
+
+A webhook is configured in GitHub.
+
+It sends an HTTP request to Jenkins when changes occur.
+This eliminates the need for manual triggering.
+
+👉 This is the key component that enables automation.
+
+🔹 4. Jenkins Server (CI/CD Engine)
+
+Jenkins is the heart of the pipeline.
+
+Once triggered, Jenkins performs the following tasks:
+
+✔ Pull Code
+Fetches the latest code from GitHub repository.
+✔ Build Process
+Uses Maven to compile the project.
+✔ Package Application
+Converts the project into a .war file (Web Application Archive).
+
+👉 This stage ensures the code is ready for deployment.
+
+🔹 5. Build Tool – Apache Maven
+
+Maven is used inside Jenkins to:
+
+Compile source code
+Manage dependencies
+Package the application
+
+Command used:
+
+clean package
+
+Output:
+👉 A .war file inside the target/ directory
+
+🔹 6. Artifact (WAR File)
+
+The generated .war file is the final build artifact.
+
+Contains compiled code and resources
+Ready to be deployed on a web server
+🔹 7. SSH Deployment
+
+Jenkins uses SSH to connect to the target server.
+
+Securely transfers the .war file
+Automates deployment process
+Removes manual file upload
+🔹 8. Application Server – Apache Tomcat
+
+Apache Tomcat is used to deploy the application.
+
+Receives the .war file
+Automatically extracts and runs the application
+Hosts the application on port 8080
+🔹 9. Live Application (End Users)
+
+After deployment:
+
+The application becomes accessible via browser
+Users can interact with the live system
+
+Example:
+
+http://<Tomcat-Public-IP>:8080/app-name
+🔷 End-to-End Flow Summary
+Developer pushes code to GitHub
+GitHub webhook triggers Jenkins
+Jenkins pulls latest code
+Maven builds and packages .war file
+Jenkins sends file via SSH
+Tomcat deploys the application
+Application becomes live
