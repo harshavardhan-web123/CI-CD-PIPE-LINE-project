@@ -1,0 +1,35 @@
+        Developer
+            │
+            ▼
+        Local Git
+            │
+            ▼
+     GitHub Repository
+            │
+            ▼
+     GitHub Webhook
+            │
+            ▼
+         Jenkins Server
+     (CI/CD Pipeline Engine)
+            │
+   ┌────────┼────────┐
+   │        │        │
+   ▼        ▼        ▼
+ Pull Code  Build   Package
+            (Maven)  (.WAR)
+                │
+                ▼
+        Generated WAR File
+                │
+                ▼
+        SSH Deployment
+                │
+                ▼
+        Apache Tomcat Server
+                │
+                ▼
+        Deployed Web Application
+                │
+                ▼
+            End Users
